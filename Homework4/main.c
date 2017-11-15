@@ -22,7 +22,6 @@
 void parse_getline(FILE*, struct vector adj[], int max);
 void parseline(char *, int *, int *, int *, int max);
 void dikeraw(struct vector adj[], int dist[], int max);
-void printArr(int dist[], int n);
 
 int main(int argc, char** argv) {
     if(argc != 3)
@@ -59,18 +58,7 @@ int main(int argc, char** argv) {
     }
     parse_getline(fptr, adjList, num);
     
-    printf("%d\n", num);
-    int j;
-    for(i = 0; i < num; i++){
-        printf("\nVertex %d\n", i + 1);
-        for(j = 0; j < num; j++){
-            printf("C: %d W: %d\n", access_element_vector(&adjList[i], j), access_element_weight(&adjList[i], j));
-        }
-    }
-    
-    printf("fuck");
-    
-    //dikeraw(adjList, dist, num);
+    dikeraw(adjList, dist, num);
     
     FILE* ofptr = fopen(*(argv + 2), "w");
     if(!ofptr)
@@ -169,8 +157,6 @@ void dikeraw(struct vector adj[], int dist[], int max)
 	minHeap->pos[0] = 0;
 	dist[0] = 0;
 	decreaseKey(minHeap, 0, dist[0]);
-        
-        printArr(dist, max);
 
 	// Initially size of min heap is equal to V
 	minHeap->size = max;
@@ -189,8 +175,7 @@ void dikeraw(struct vector adj[], int dist[], int max)
                 v = 0;
 		while (v < vector_size(pCrawl))
 		{
-                    printArr(dist, max);
-			int p = access_element_vector(pCrawl, v);
+			int p = access_element_vector(pCrawl, v) - 1;
 
 			// If shortest distance to v is not finalized yet, and distance to v
 			// through u is less than its previously calculated distance
@@ -204,12 +189,4 @@ void dikeraw(struct vector adj[], int dist[], int max)
 			v++;
 		}
 	}
-}
-
-void printArr(int dist[], int n)
-{
-	printf("Vertex Distance from Source\n");
-        int i;
-	for (i = 0; i < n; ++i)
-		printf("%d \t\t %d\n", i, dist[i]);
 }
