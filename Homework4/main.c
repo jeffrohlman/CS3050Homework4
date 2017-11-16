@@ -64,8 +64,11 @@ int main(int argc, char** argv) {
     if(!ofptr)
         exit(OUTPUT_FILE_FAILED_TO_OPEN);
     
-    for(i = 0; i < num; i++)
+    for(i = 0; i < num; i++){
+        if(dist[i] > INT_MAX - 1)
+            dist[i] = -1;
         fprintf(ofptr, "%d\n", dist[i]);
+    }
     
     if((fclose(fptr)) != 0)
         exit(INPUT_FILE_FAILED_TO_CLOSE);
@@ -138,6 +141,8 @@ void parseline(char *line, int *v1, int *v2, int *w, int max) {
             exit(PARSING_ERROR_INVALID_FORMAT);
 }
 
+
+//Based off of dijkstra's algorithm shown on geeksforgeeks.org
 void dikeraw(struct vector adj[], int dist[], int max)
 {
 

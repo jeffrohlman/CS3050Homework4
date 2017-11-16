@@ -26,8 +26,9 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" input_file.txt output.txt</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" input.txt output.txt</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" input_file.txt output.txt</runcommand>
+        <runcommand>"${OUTPUT_PATH}" input.txt output.txt</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

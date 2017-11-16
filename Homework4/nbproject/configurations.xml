@@ -11,6 +11,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>input.txt</itemPath>
       <itemPath>input_file.txt</itemPath>
       <itemPath>output.txt</itemPath>
       <itemPath>output_file.txt</itemPath>
@@ -47,6 +48,8 @@
       <item path="heap.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="input.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="input_error.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -86,6 +89,8 @@
       <item path="heap.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="heap.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="input.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="input_error.h" ex="false" tool="3" flavor2="0">
       </item>
